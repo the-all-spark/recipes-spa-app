@@ -19,7 +19,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"], // src/*
+      "@components/*": ["components/*"], // src/components/*
+      "@pages/*": ["pages/*"], // src/pages/*
+      "@api/*": ["api/*"] // src/api/*
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
