@@ -17,9 +17,6 @@ export default {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@pages': path.resolve(__dirname, 'src/pages'),
-      '@api': path.resolve(__dirname, 'src/api'),
     },
   },
   module: {
