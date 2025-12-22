@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Flatshoes-Regular';
+  src: url('../assets/fonts/flatshoes.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}

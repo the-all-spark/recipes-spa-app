@@ -7,6 +7,8 @@ import RecipeDetailPage from '@/pages/RecipeDetailPage/RecipeDetailPage';
 import LoginPage from '@/pages/LoginPage/LoginPage';
 import NotFoundPage from '@/pages/NotFoundPage/NotFoundPage';
 
+import './styles/fonts.css';
+
 function App() {
   return (
     <BrowserRouter>
