@@ -1,10 +1,13 @@
 // TODO тип ответа - дополнить!
-interface Recipe {
+export interface RecipeOverview {
   id: number;
   name: string;
+  image: string;
+  tags: string[];
   difficulty: string;
+  rating: number;
 }
 
-export interface RecipesResponse {
-  recipes: Recipe[];
+export interface RecipesOverviewResponse {
+  recipes: RecipeOverview[];
 }

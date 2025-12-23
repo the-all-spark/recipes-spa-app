@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { RecipesResponse } from '@/types/RecipesResponse';
+import type { RecipesOverviewResponse } from '@/types/RecipesResponse';
 
 // all endpoints to REST API (recipes, user auth, etc.)
 export const recipesApi = createApi({
   reducerPath: 'recipesApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
   endpoints: (builder) => ({
-    getRecipes: builder.query<RecipesResponse, void>({
+    getRecipes: builder.query<RecipesOverviewResponse, void>({
       // ! change limit to 50 (get all recipes)
       query: () => '/recipes?limit=10',
     }),
