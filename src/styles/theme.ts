@@ -21,6 +21,11 @@ const theme = createTheme({
       fontSize: '2rem',
       fontWeight: 400,
     },
+    h3: {
+      fontFamily: 'Flatshoes-Regular',
+      fontSize: '1.7rem',
+      fontWeight: 400,
+    },
     body1: {
       fontSize: '1.1rem',
     },
