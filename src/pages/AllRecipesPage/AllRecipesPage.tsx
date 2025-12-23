@@ -14,7 +14,6 @@ const AllRecipesPage = () => {
   if (isLoading) {
     content = <p>Loading...</p>; // TODO: implement as component
   } else if (isSuccess) {
-    console.log(data); //!
     content = data.recipes.map((recipe: RecipeOverview) => <RecipeCard key={recipe.id} recipe={recipe} />);
   } else if (isError && error) {
     content = <p>{error.toString()}</p>; // TODO: implement as component

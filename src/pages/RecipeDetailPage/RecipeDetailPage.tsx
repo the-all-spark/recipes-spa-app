@@ -1,4 +1,8 @@
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -9,12 +13,23 @@ import GeneralSpanText from '@/components/GeneralSpanText/GeneralSpanText';
 import RecipeContentList from '@/components/RecipeContentList/RecipeContentList';
 import ImageBlock from '@/components/ImageBlock/ImageBlock';
 import { InfoBlockContainer } from '@/pages/RecipeDetailPage/RecipeDetailPage.styled';
+import BackwardArrow from '@/components/BackwardArrow/BackwardArrow';
 
 import { useGetSingleRecipeQuery } from '@/app/api/recipesApi';
 
 const RecipeDetailPage = () => {
   const { id } = useParams();
+  let navigate = useNavigate();
+  const location = useLocation();
   const { data: recipe, isFetching, isSuccess } = useGetSingleRecipeQuery(id!);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const handleBackNavigation = () => {
+    navigate(-1);
+  };
 
   let content: React.ReactNode;
 
@@ -81,7 +96,12 @@ const RecipeDetailPage = () => {
     );
   }
 
-  return <section>{content}</section>;
+  return (
+    <>
+      <BackwardArrow handleBackNavigation={handleBackNavigation} />
+      <section>{content}</section>
+    </>
+  );
 };
 
 export default RecipeDetailPage;

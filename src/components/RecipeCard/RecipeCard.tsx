@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import CardMedia from '@mui/material/CardMedia';
 import { useTheme } from '@mui/material/styles';
 
@@ -21,10 +23,15 @@ interface RecipeCardProps {
 
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const theme = useTheme();
+  let navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate(`/recipes/${recipe.id}`);
+  };
 
   return (
     <CardContainer>
-      <CardActionAreaContainer>
+      <CardActionAreaContainer onClick={handleNavigation}>
         <CardMedia component="div">
           <ImageBlock recipe={recipe} width="290px" height="140px" />
         </CardMedia>
