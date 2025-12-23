@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { RecipesOverviewResponse } from '@/types/RecipesResponse';
+import type { Recipe } from '@/types/RecipesResponse';
 
 // all endpoints to REST API (recipes, user auth, etc.)
 export const recipesApi = createApi({
@@ -8,9 +9,12 @@ export const recipesApi = createApi({
   endpoints: (builder) => ({
     getRecipes: builder.query<RecipesOverviewResponse, void>({
       // ! change limit to 50 (get all recipes)
-      query: () => '/recipes?limit=10',
+      query: () => '/recipes?limit=15',
+    }),
+    getSingleRecipe: builder.query<Recipe, string>({
+      query: (id) => `/recipes/${id}`,
     }),
   }),
 });
 
-export const { useGetRecipesQuery } = recipesApi;
+export const { useGetRecipesQuery, useGetSingleRecipeQuery } = recipesApi;
