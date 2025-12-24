@@ -21,6 +21,13 @@ export default {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][hash][ext]',
+        },
+      },
+      {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: [
@@ -39,13 +46,7 @@ export default {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/images/[name][hash][ext]',
-        },
-      },
+
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',

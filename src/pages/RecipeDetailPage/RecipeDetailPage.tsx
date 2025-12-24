@@ -96,7 +96,7 @@ const RecipeDetailPage = () => {
       </article>
     );
   } else if (isError && error) {
-    content = <NotFoundPage />; // TODO: implement as component
+    content = <NotFoundPage />;
   }
 
   return (
