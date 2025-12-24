@@ -13,7 +13,7 @@ interface NavListProps {
 const NavList = ({ styles }: NavListProps) => {
   return (
     <List sx={styles ? styles : null}>
-      <NavListItem item={RECIPES_PAGE} to={'/recipes'} />
+      <NavListItem item={RECIPES_PAGE} to={'/recipes?page=1'} />
       <NavListItem item={LOGIN_PAGE} to={'/login'} />
     </List>
   );

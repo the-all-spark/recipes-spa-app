@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 
 export const CardContainer = styled(Card)(() => ({
-  width: '30%',
+  width: '31%',
   border: '1px solid #cecece',
 }));
 

@@ -5,7 +5,7 @@ export const RecipesContainer = styled(Box)(() => ({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '2rem',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
   margin: '0 auto',
   marginTop: '2rem',
   marginBottom: '2rem',

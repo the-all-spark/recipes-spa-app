@@ -8,8 +8,7 @@ export const recipesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
   endpoints: (builder) => ({
     getRecipes: builder.query<RecipesOverviewResponse, void>({
-      // ! change limit to 50 (get all recipes)
-      query: () => '/recipes?limit=15',
+      query: () => '/recipes?limit=0',
     }),
     getSingleRecipe: builder.query<Recipe, string>({
       query: (id) => `/recipes/${id}`,

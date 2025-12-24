@@ -33,7 +33,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
     <CardContainer>
       <CardActionAreaContainer onClick={handleNavigation}>
         <CardMedia component="div">
-          <ImageBlock recipe={recipe} width="290px" height="140px" />
+          <ImageBlock recipe={recipe} width="300px" height="140px" />
         </CardMedia>
         <CardContentContainer>
           <H2Text>{recipe.name}</H2Text>

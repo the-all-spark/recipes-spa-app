@@ -26,4 +26,5 @@ export interface Recipe {
 
 export interface RecipesOverviewResponse {
   recipes: RecipeOverview[];
+  total: number;
 }
