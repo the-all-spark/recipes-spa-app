@@ -10,10 +10,11 @@ import H1Text from '@/components/H1Text/H1Text';
 import H2Text from '@/components/H2Text/H2Text';
 import H3Text from '@/components/H3Text/H3Text';
 import GeneralSpanText from '@/components/GeneralSpanText/GeneralSpanText';
-import RecipeContentList from '@/components/RecipeContentList/RecipeContentList';
 import ImageBlock from '@/components/ImageBlock/ImageBlock';
-import { InfoBlockContainer } from '@/pages/RecipeDetailPage/RecipeDetailPage.styled';
 import BackwardArrow from '@/components/BackwardArrow/BackwardArrow';
+import DividedRecipeContent from '@/features/dividedRecipeContentList/DividedRecipeContent';
+import { InfoBlockContainer } from '@/pages/RecipeDetailPage/RecipeDetailPage.styled';
+import NotFoundPage from '@/pages/NotFoundPage/NotFoundPage';
 
 import { useGetSingleRecipeQuery } from '@/app/api/recipesApi';
 
@@ -21,7 +22,7 @@ const RecipeDetailPage = () => {
   const { id } = useParams();
   let navigate = useNavigate();
   const location = useLocation();
-  const { data: recipe, isFetching, isSuccess } = useGetSingleRecipeQuery(id!);
+  const { data: recipe, isFetching, isSuccess, isError, error } = useGetSingleRecipeQuery(id!);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -81,11 +82,11 @@ const RecipeDetailPage = () => {
 
         <InfoBlockContainer>
           <H2Text>Ingredients:</H2Text>
-          <RecipeContentList recipeInfo={recipe.ingredients} />
+          <DividedRecipeContent type="ul" recipeInfo={recipe.ingredients} />
         </InfoBlockContainer>
         <InfoBlockContainer>
           <H2Text>Instructions:</H2Text>
-          <RecipeContentList type="ol" recipeInfo={recipe.instructions} />
+          <DividedRecipeContent type="ol" recipeInfo={recipe.instructions} />
         </InfoBlockContainer>
 
         <Typography component="div" sx={{ textAlign: 'right', marginTop: '2rem' }}>
@@ -94,6 +95,8 @@ const RecipeDetailPage = () => {
         </Typography>
       </article>
     );
+  } else if (isError && error) {
+    content = <NotFoundPage />; // TODO: implement as component
   }
 
   return (

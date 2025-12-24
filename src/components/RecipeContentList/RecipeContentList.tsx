@@ -2,11 +2,11 @@ import List from '@mui/material/List';
 import RecipeContentListItem from '@/components/RecipeContentListItem/RecipeContentListItem';
 
 interface RecipeContentListProps {
-  type?: 'ul' | 'ol';
-  recipeInfo: string[];
+  type: 'ul' | 'ol';
+  recipeChunkInfo: string[];
 }
 
-const RecipeContentList: React.FC<RecipeContentListProps> = ({ type = 'ul', recipeInfo }) => {
+const RecipeContentList: React.FC<RecipeContentListProps> = ({ type, recipeChunkInfo }) => {
   let listStyleValue: string = type === 'ul' ? 'disc' : 'auto';
 
   return (
@@ -14,7 +14,7 @@ const RecipeContentList: React.FC<RecipeContentListProps> = ({ type = 'ul', reci
       component={type}
       sx={{ margin: 0, paddingLeft: '2rem', paddingTop: '0.4rem', listStyle: `${listStyleValue}` }}
     >
-      {recipeInfo.map((item: string) => (
+      {recipeChunkInfo.map((item: string) => (
         <RecipeContentListItem key={item} item={item} />
       ))}
     </List>
