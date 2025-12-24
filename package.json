@@ -1,5 +1,6 @@
 {
-  "name": "spa-app",
+  "name": "recipes-spa-app",
+  "homepage": "https://the-all-spark.github.io/recipes-spa-app",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -7,7 +8,9 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --config webpack.dev.js"
+    "dev": "webpack serve --config webpack.dev.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -22,12 +25,15 @@
     "react-dom": "^19.2.1",
     "react-redux": "^9.2.0",
     "react-router": "^7.10.1",
-    "react-router-dom": "^7.10.1"
+    "react-router-dom": "^7.10.1",
+    "serve": "^14.2.5"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "compression-webpack-plugin": "^11.1.0",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.5",
     "prettier": "^3.7.4",
     "style-loader": "^4.0.0",
