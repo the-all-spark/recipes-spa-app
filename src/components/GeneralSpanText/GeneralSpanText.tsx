@@ -8,7 +8,7 @@ interface GeneralSpanTextProps {
 
 const GeneralSpanText = ({ children, styles }: GeneralSpanTextProps) => {
   return (
-    <Typography component="span" sx={{ display: 'inline-block', marginLeft: '0.8rem', ...styles }}>
+    <Typography component="span" sx={{ display: 'inline-block', ...styles }}>
       {children}
     </Typography>
   );

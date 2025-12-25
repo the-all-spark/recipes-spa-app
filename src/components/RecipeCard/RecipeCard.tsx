@@ -7,6 +7,7 @@ import type { RecipeOverview } from '@/types/RecipesResponse';
 
 import H2Text from '@/components/H2Text/H2Text';
 import GeneralPText from '@/components/GeneralPText/GeneralPText';
+import ImageBlock from '@/components/ImageBlock/ImageBlock';
 
 import {
   CardContainer,
@@ -15,7 +16,8 @@ import {
   InfoContainer,
   ValueInfoContainer,
 } from '@/components/RecipeCard/RecipeCard.styled';
-import ImageBlock from '../ImageBlock/ImageBlock';
+
+import DifficultyLevel from '@/components/DifficultyLevel/DifficultyLevel';
 
 interface RecipeCardProps {
   recipe: RecipeOverview;
@@ -39,7 +41,8 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
           <H2Text>{recipe.name}</H2Text>
           <InfoContainer>
             <ValueInfoContainer>
-              <GeneralPText>Difficulty: {recipe.difficulty}</GeneralPText>
+              <GeneralPText>Difficulty: </GeneralPText>
+              <DifficultyLevel difficulty={recipe.difficulty} />
               <GeneralPText>Rating: {recipe.rating}</GeneralPText>
             </ValueInfoContainer>
             <GeneralPText styles={{ color: theme.palette.secondary.main, fontSize: '0.9rem' }}>

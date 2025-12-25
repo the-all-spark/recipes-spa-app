@@ -4,9 +4,9 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 
-export const CardContainer = styled(Card)(() => ({
+export const CardContainer = styled(Card)(({ theme }) => ({
   width: '31%',
-  border: '1px solid #cecece',
+  border: `1px solid ${theme.palette.secondary.light}`,
 }));
 
 export const CardActionAreaContainer = styled(CardActionArea)(() => ({

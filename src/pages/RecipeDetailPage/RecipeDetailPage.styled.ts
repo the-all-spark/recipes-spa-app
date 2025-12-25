@@ -7,3 +7,9 @@ export const InfoBlockContainer = styled(Box)(() => ({
   flexDirection: 'row',
   gap: '1.9rem',
 }));
+
+export const ItemContainer = styled(Box)(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  columnGap: '1rem',
+}));
