@@ -10,6 +10,9 @@ const theme = createTheme({
       main: '#000000b3',
       light: '#cecece',
     },
+    error: {
+      main: '#be0000',
+    },
   },
   typography: {
     h1: {
