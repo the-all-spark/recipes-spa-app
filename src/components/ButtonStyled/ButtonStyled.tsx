@@ -7,9 +7,10 @@ interface ButtonStyledProps {
   type?: 'submit' | 'button';
   mode: 'light' | 'dark';
   styles?: SxProps | undefined;
+  onClick?: () => void;
 }
 
-const ButtonStyled = ({ children, type = 'button', mode, styles }: ButtonStyledProps) => {
+const ButtonStyled = ({ children, type = 'button', mode, styles, onClick }: ButtonStyledProps) => {
   const theme = useTheme();
 
   let color = mode === 'light' ? theme.palette.primary.main : theme.palette.secondary.light;
@@ -22,9 +23,11 @@ const ButtonStyled = ({ children, type = 'button', mode, styles }: ButtonStyledP
         fontWeight: 700,
         border: `2px solid ${color}`,
         height: '48px',
+        width: '175px',
         padding: '0 1.5rem',
         ...styles,
       }}
+      onClick={onClick}
     >
       {children}
     </Button>
